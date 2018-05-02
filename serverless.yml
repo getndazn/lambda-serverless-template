@@ -1,0 +1,46 @@
+service: lambda-serverless-template
+
+# you can go to here: https://serverless.com/framework/docs/providers/aws/guide/serverless.yml/
+# to see a full example for all the things supported by the serverless.yml
+
+plugins:
+  - serverless-pseudo-parameters
+  - serverless-iam-roles-per-function
+  
+custom:
+  stage: ${opt:stage}
+  serverless-iam-roles-per-function: # for the serverless-iam-roles-per-function plugin
+    defaultInherit: true             # all the functions would inherit the common permissions
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: dev
+
+  # iamRoleStatements:  # common permissions that each function would inherit
+    #   - Effect: Allow
+    #     Action: ....
+    #     Resource: ....
+  # environment:        # common environment variables each function would inherit
+  #   foo: bar
+
+functions:
+  hello-world:
+    handler: functions/hello-world.handler
+    description: say hello world!
+    # timeout: 6    # timeout for the function, Serverless defaults to 6s
+    # memory: 1024  # memory allocation for the function, Serverless defaults to 1024MB
+    # events:       # see https://serverless.com/framework/docs/providers/aws/events/ for all supported AWS events
+    #   - http:
+    #       path: /
+    #       method: get
+    # iamRoleStatements:  # per-function IAM policy as enabled by the serverless-iam-roles-per-function plugin
+    #   - Effect: Allow
+    #     Action: ....
+    #     Resource: ....
+    # environment:        # function specific environment variables
+    #   bar: foo
+
+# you can add CloudFormation resource templates here
+# resources:
+  # Resources:

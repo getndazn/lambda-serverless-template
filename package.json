@@ -1,0 +1,16 @@
+{
+    "name": "lambda-serverless-template",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "serverless": "^1.27.0",
+        "serverless-iam-roles-per-function": "^0.1.5",
+        "serverless-pseudo-parameters": "^1.6.0"
+    }
+}
