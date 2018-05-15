@@ -1,16 +1,23 @@
 {
-    "name": "lambda-serverless-template",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "",
-    "license": "ISC",
-    "devDependencies": {
-        "serverless": "^1.27.0",
-        "serverless-iam-roles-per-function": "^0.1.5",
-        "serverless-pseudo-parameters": "^1.6.0"
-    }
+  "name": "lambda-serverless-template",
+  "version": "1.0.0",
+  "description": "Lambda template for Serverless",
+  "main": "main.js",
+  "scripts": {
+    "lint": "eslint . --ext .js"
+  },
+  "author": "Diogo Azevedo <diogoazevedos@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ramda": "^0.25.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getndazn/lambda-serverless-template.git"
+  }
 }
