@@ -4,21 +4,17 @@ Serverless framework template for a Lambda-based service
 
 ## Getting started
 
-Make sure you have the [Serverless framework](https://serverless.com/framework/) installed on your machine. You'll only need it for the purpose of installing the template, as the template would have install it as a dev dependencies to mitigate the issues of incompatibility when the framework updates.
+1. Run `npx serverless install --url https://github.com/getndazn/lambda-serverless-template --name <insert_name_of_your_service_here>`
 
-1. Run `serverless install --url https://github.com/getndazn/lambda-serverless-template --name <insert_name_of_your_service_here>`
-
-2. Run `nmp install`
+2. Run `npm install` in the root of your newly created service directory.
 
 ## Project structure
 
 `build.sh`  : simple bash script that allows you to test and deploy your code easily, e.g. `./build.sh test` to run test, `./build.sh deploy dev` to deploy to `dev` environment, or `./build.sh all dev` to run test and then deploy to `dev` environment (if tests pass)
 
-`functions` : put all the handler modules there
+`src/functions` : put all the handler modules there
 
 `examples`  : put all the captured invocation events as JSON there (for local debugging)
-
-`Dockerfile` : docker file to be triggered by Jenkins build config that will run `./build.sh all dev` (more work to be done here to allow environment to be passed in)
 
 ## Plugins included
 
@@ -41,5 +37,7 @@ Also consider installing `middy` which is a nice middleware engine that makes it
 ## Checklist before you deploy
 
 1. Run `npm install serverless --save-dev` to update to the latest version of the [Serverless framework](https://serverless.com/framework/) as a **DEV dependency**
+
+2. Run `npm outdated` to check if any outdated packages should be updated.
 
 2. Delete the `hello-world` function from the `functions` folder, and remove it from the `serverless.yml`

@@ -3,12 +3,8 @@ service: lambda-serverless-template
 # you can go to here: https://serverless.com/framework/docs/providers/aws/guide/serverless.yml/
 # to see a full example for all the things supported by the serverless.yml
 
-plugins:
-  - serverless-pseudo-parameters
-  - serverless-iam-roles-per-function
-  
 custom:
-  stage: ${opt:stage}
+  stage: ${opt:stage, self:provider.stage}
   serverless-iam-roles-per-function: # for the serverless-iam-roles-per-function plugin
     defaultInherit: true             # all the functions would inherit the common permissions
 
@@ -26,7 +22,7 @@ provider:
 
 functions:
   hello-world:
-    handler: functions/hello-world.handler
+    handler: src/functions/hello-world.handler
     description: say hello world!
     # timeout: 6    # timeout for the function, Serverless defaults to 6s
     # memory: 1024  # memory allocation for the function, Serverless defaults to 1024MB
@@ -44,3 +40,14 @@ functions:
 # you can add CloudFormation resource templates here
 # resources:
   # Resources:
+
+package:
+  exclude:
+    - "*"
+    - node_modules/*/test/**/*.*
+    - ".terraform/**"
+    - "terraform/**"
+
+plugins:
+  - serverless-pseudo-parameters
+  - serverless-iam-roles-per-function

@@ -66,3 +66,6 @@ jspm_packages
 
 # Serverless directories
 .serverless
+
+# VSCode user settings
+.vscode
