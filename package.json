@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@perform/serverless-dazn-cloudwatch-logs": "^0.1.0",
     "serverless": "^1.35.1",
     "serverless-iam-roles-per-function": "^1.0.4",
     "serverless-pseudo-parameters": "^2.4.0"

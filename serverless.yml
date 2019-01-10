@@ -51,3 +51,4 @@ package:
 plugins:
   - serverless-pseudo-parameters
   - serverless-iam-roles-per-function
+  - "@perform/serverless-dazn-cloudwatch-logs"

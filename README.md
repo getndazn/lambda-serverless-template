@@ -22,6 +22,8 @@ Serverless framework template for a Lambda-based service
 
 `serverless-iam-roles-per-function` : allows you to specify per function IAM roles. This is important as it reduces the attack surface should a function become compromised. See the plugin [repo](https://github.com/functionalone/serverless-iam-roles-per-function) for more details.
 
+`@perform/serverless-dazn-cloudwatch-logs` : changes CloudWatch LogGroup naming to follow [DAZN Centralized Application Logging](https://livesport.atlassian.net/wiki/spaces/DP/pages/807862308/Centralised+Application+Logging) convention.
+
 ## Other plugins to consider
 
 Here are some other plugins to consider:
