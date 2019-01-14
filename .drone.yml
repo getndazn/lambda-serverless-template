@@ -1,0 +1,39 @@
+pipeline:
+  restore-cache:
+    image: plugins/s3-cache:1
+    restore: true
+    when:
+      event: [ push, deployment ]
+
+  npm-auth:
+    image: robertstettner/drone-npm-auth
+    secrets: [ npm_token ]
+    when:
+      event: [ push, deployment ]
+
+  build:
+    image: node:8.10-alpine
+    commands: npm prune && npm install
+    when:
+      event: [ push, deployment ]
+
+  rebuild-cache:
+    image: plugins/s3-cache:1
+    rebuild: true
+    mount:
+      - node_modules
+    when:
+      event: push
+
+  test-dev:
+    image: node:8.10-alpine
+    commands: npm test
+    when:
+      event: push
+
+  deploy-dev:
+    image: node:8.10-alpine
+    commands: npm run deploy:dev
+    when:
+      event: deployment
+      environment: dev

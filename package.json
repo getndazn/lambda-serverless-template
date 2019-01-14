@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sls": "serverless"
+    "sls": "serverless",
+    "deploy:dev": "serverless deploy -s dev"
   },
   "author": "",
   "license": "ISC",
