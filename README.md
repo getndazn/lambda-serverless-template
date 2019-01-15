@@ -10,8 +10,6 @@ Serverless framework template for a Lambda-based service
 
 ## Project structure
 
-`build.sh`  : simple bash script that allows you to test and deploy your code easily, e.g. `./build.sh test` to run test, `./build.sh deploy dev` to deploy to `dev` environment, or `./build.sh all dev` to run test and then deploy to `dev` environment (if tests pass)
-
 `src/functions` : put all the handler modules there
 
 `examples`  : put all the captured invocation events as JSON there (for local debugging)

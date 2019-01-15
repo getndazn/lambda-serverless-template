@@ -25,15 +25,15 @@ pipeline:
     when:
       event: push
 
-  test-dev:
-    image: node:8.10-alpine
-    commands: npm test
-    when:
-      event: push
+  # test-dev:
+  #   image: node:8.10-alpine
+  #   commands: npm test
+  #   when:
+  #     event: push
 
-  deploy-dev:
-    image: node:8.10-alpine
-    commands: npm run deploy:dev
-    when:
-      event: deployment
-      environment: dev
+  # deploy-dev:
+  #   image: node:8.10-alpine
+  #   commands: npm run deploy:dev
+  #   when:
+  #     event: deployment
+  #     environment: dev
