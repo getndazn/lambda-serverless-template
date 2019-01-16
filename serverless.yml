@@ -44,6 +44,9 @@ functions:
 package:
   exclude:
     - "*"
+    - examples/**
+    - src/**/*.spec.js
+    - test/**
     - node_modules/*/test/**/*.*
     - ".terraform/**"
     - "terraform/**"

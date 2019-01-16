@@ -30,6 +30,7 @@ pipeline:
   #   commands: npm test
   #   when:
   #     event: push
+  #     branch: master
 
   # deploy-dev:
   #   image: node:8.10-alpine
